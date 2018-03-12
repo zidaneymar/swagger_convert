@@ -7,33 +7,33 @@
 //
 
 
-export as namespace microsoftgraph;
+export as namespace MicrosoftGraph;
 
-export type AutomaticRepliesStatus = "disabled" | "alwaysEnabled" | "scheduled"
-export type ExternalAudienceScope = "none" | "contactsOnly" | "all"
-export type AttendeeType = "required" | "optional" | "resource"
-export type FreeBusyStatus = "free" | "tentative" | "busy" | "oof" | "workingElsewhere" | "unknown"
-export type ActivityDomain = "unknown" | "work" | "personal" | "unrestricted"
-export type BodyType = "text" | "html"
-export type Importance = "low" | "normal" | "high"
-export type InferenceClassificationType = "focused" | "other"
-export type CalendarColor = "lightBlue" | "lightGreen" | "lightOrange" | "lightGray" | "lightYellow" | "lightTeal" | "lightPink" | "lightBrown" | "lightRed" | "maxColor" | "auto"
-export type ResponseType = "none" | "organizer" | "tentativelyAccepted" | "accepted" | "declined" | "notResponded"
-export type Sensitivity = "normal" | "personal" | "private" | "confidential"
-export type RecurrencePatternType = "daily" | "weekly" | "absoluteMonthly" | "relativeMonthly" | "absoluteYearly" | "relativeYearly"
-export type DayOfWeek = "sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday"
-export type WeekIndex = "first" | "second" | "third" | "fourth" | "last"
-export type RecurrenceRangeType = "endDate" | "noEnd" | "numbered"
-export type EventType = "singleInstance" | "occurrence" | "exception" | "seriesMaster"
-export type MeetingMessageType = "none" | "meetingRequest" | "meetingCancelled" | "meetingAccepted" | "meetingTenativelyAccepted" | "meetingDeclined"
-export type PhoneType = "home" | "business" | "mobile" | "other" | "assistant" | "homeFax" | "businessFax" | "otherFax" | "pager" | "radio"
-export type WebsiteType = "other" | "home" | "work" | "blog" | "profile"
-export type PlannerPreviewType = "automatic" | "noPreview" | "checklist" | "description" | "reference"
-export type OperationStatus = "NotStarted" | "Running" | "Completed" | "Failed"
-export type OnenotePatchInsertPosition = "After" | "Before"
-export type OnenotePatchActionType = "Replace" | "Append" | "Delete" | "Insert" | "Prepend"
-export type OnenoteSourceService = "Unknown" | "OneDrive" | "OneDriveForBusiness" | "OnPremOneDriveForBusiness"
-export type OnenoteUserRole = "Owner" | "Contributor" | "Reader" | "None"
+// export type string = "disabled" | "alwaysEnabled" | "scheduled"
+// export type string = "none" | "contactsOnly" | "all"
+// export type string = "required" | "optional" | "resource"
+// export type string = "free" | "tentative" | "busy" | "oof" | "workingElsewhere" | "unknown"
+// export type string = "unknown" | "work" | "personal" | "unrestricted"
+// export type string = "text" | "html"
+// export type string = "low" | "normal" | "high"
+// export type string = "focused" | "other"
+// export type string = "lightBlue" | "lightGreen" | "lightOrange" | "lightGray" | "lightYellow" | "lightTeal" | "lightPink" | "lightBrown" | "lightRed" | "maxColor" | "auto"
+// export type string = "none" | "organizer" | "tentativelyAccepted" | "accepted" | "declined" | "notResponded"
+// export type string = "normal" | "personal" | "private" | "confidential"
+// export type string = "daily" | "weekly" | "absoluteMonthly" | "relativeMonthly" | "absoluteYearly" | "relativeYearly"
+// export type string = "sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday"
+// export type string = "first" | "second" | "third" | "fourth" | "last"
+// export type string = "endDate" | "noEnd" | "numbered"
+// export type string = "singleInstance" | "occurrence" | "exception" | "seriesMaster"
+// export type string = "none" | "meetingRequest" | "meetingCancelled" | "meetingAccepted" | "meetingTenativelyAccepted" | "meetingDeclined"
+// export type string = "home" | "business" | "mobile" | "other" | "assistant" | "homeFax" | "businessFax" | "otherFax" | "pager" | "radio"
+// export type string = "other" | "home" | "work" | "blog" | "profile"
+// export type string = "automatic" | "noPreview" | "checklist" | "description" | "reference"
+// export type string = "NotStarted" | "Running" | "Completed" | "Failed"
+// export type string = "After" | "Before"
+// export type string = "Replace" | "Append" | "Delete" | "Insert" | "Prepend"
+// export type string = "Unknown" | "OneDrive" | "OneDriveForBusiness" | "OnPremOneDriveForBusiness"
+// export type string = "Owner" | "Contributor" | "Reader" | "None"
 
 export interface Entity {
 
@@ -419,7 +419,7 @@ export interface Calendar extends Entity {
 	    name?: string
 
 	    /** Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: LightBlue=0, LightGreen=1, LightOrange=2, LightGray=3, LightYellow=4, LightTeal=5, LightPink=6, LightBrown=7, LightRed=8, MaxColor=9, Auto=-1 */
-	    color?: CalendarColor
+	    color?: string
 
 	    /** Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only. */
 	    changeKey?: string
@@ -494,11 +494,11 @@ export interface Event extends OutlookItem {
 	    /** The preview of the message associated with the event. It is in text format. */
 	    bodyPreview?: string
 
-	    /** The importance of the event: Low = 0, Normal = 1, High = 2. Possible values are: Low, Normal, High. */
-	    importance?: Importance
+	    /** The string of the event: Low = 0, Normal = 1, High = 2. Possible values are: Low, Normal, High. */
+	    importance?: string
 
 	    /** Possible values are: Normal, Personal, Private, Confidential. */
-	    sensitivity?: Sensitivity
+	    sensitivity?: string
 
 	    /** The date, time, and time zone that the event starts. */
 	    start?: DateTimeTimeZone
@@ -531,10 +531,10 @@ export interface Event extends OutlookItem {
 	    seriesMasterId?: string
 
 	    /** The status to show: Free = 0, Tentative = 1, Busy = 2, Oof = 3, WorkingElsewhere = 4, Unknown = -1. Possible values are: Free, Tentative, Busy, Oof, WorkingElsewhere, Unknown. */
-	    showAs?: FreeBusyStatus
+	    showAs?: string
 
 	    /** The event type: SingleInstance = 0, Occurrence = 1, Exception = 2, SeriesMaster = 3. Possible values are: SingleInstance, Occurrence, Exception, SeriesMaster. */
-	    type?: EventType
+	    type?: string
 
 	    /** The collection of attendees for the event. */
 	    attendees?: Attendee[]
@@ -993,7 +993,7 @@ export interface User extends DirectoryObject {
 	    /** The user's contacts folders. Read-only. Nullable. */
 	    contactFolders?: ContactFolder[]
 
-	    /** Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance. */
+	    /** Relevance classification of the user's messages based on explicit designations which override inferred relevance or string. */
 	    inferenceClassification?: InferenceClassification
 
 	    /** The user's profile photo. Read-only. */
@@ -1037,8 +1037,8 @@ export interface Message extends OutlookItem {
 	    /** The first 255 characters of the message body. It is in text format. */
 	    bodyPreview?: string
 
-	    /** The importance of the message: Low, Normal, High. */
-	    importance?: Importance
+	    /** The string of the message: Low, Normal, High. */
+	    importance?: string
 
 	    /** The unique identifier for the message's parent mailFolder. */
 	    parentFolderId?: string
@@ -1082,8 +1082,8 @@ export interface Message extends OutlookItem {
 	    /** The URL to open the message in Outlook Web App.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.This URL can be accessed from within an iFrame. */
 	    webLink?: string
 
-	    /** The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. Possible values are: focused or other. */
-	    inferenceClassification?: InferenceClassificationType
+	    /** The classification of the message for the user, based on inferred relevance or string, or on an explicit override. Possible values are: focused or other. */
+	    inferenceClassification?: string
 
 	    /** The fileAttachment and itemAttachment attachments for the message. */
 	    attachments?: Attachment[]
@@ -1445,7 +1445,7 @@ export interface ItemAttachment extends Attachment {
 
 export interface EventMessage extends Message {
 
-	    meetingMessageType?: MeetingMessageType
+	meetingMessageType?: string
 
 	    event?: Event
 
@@ -1507,7 +1507,7 @@ export interface Post extends OutlookItem {
 export interface InferenceClassificationOverride extends Entity {
 
 	    /** Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other. */
-	    classifyAs?: InferenceClassificationType
+	    classifyAs?: string
 
 	    /** The email address information of the sender for whom the override is created. */
 	    senderEmailAddress?: EmailAddress
@@ -2372,7 +2372,7 @@ export interface PlannerTask extends Entity {
 	    hasDescription?: boolean
 
 	    /** This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. */
-	    previewType?: PlannerPreviewType
+	    previewType?: string
 
 	    /** Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z' */
 	    completedDateTime?: string
@@ -2472,7 +2472,7 @@ export interface PlannerTaskDetails extends Entity {
 	    description?: string
 
 	    /** This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task. */
-	    previewType?: PlannerPreviewType
+	    previewType?: string
 
 	    /** The collection of references on the task. */
 	    references?: PlannerExternalReferences
@@ -2546,7 +2546,7 @@ export interface Notebook extends OnenoteEntityHierarchyModel {
 	    isDefault?: boolean
 
 	    /** Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only. */
-	    userRole?: OnenoteUserRole
+	    userRole?: string
 
 	    /** Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only. */
 	    isShared?: boolean
@@ -2652,7 +2652,7 @@ export interface OnenoteResource extends OnenoteEntityBaseModel {
 
 export interface Operation extends Entity {
 
-	    status?: OperationStatus
+	    status?: string
 
 	    createdDateTime?: string
 
@@ -2793,10 +2793,10 @@ export interface MailboxSettings {
 export interface AutomaticRepliesSetting {
 
 	    /** Configurations status for automatic replies. Possible values are: disabled, alwaysEnabled, scheduled. */
-	    status?: AutomaticRepliesStatus
+	    status?: string
 
 	    /** The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. Possible values are: none, contactsOnly, all. */
-	    externalAudience?: ExternalAudienceScope
+	    externalAudience?: string
 
 	    /** The date and time that automatic replies are set to begin, if Status is set to Scheduled. */
 	    scheduledStartDateTime?: DateTimeTimeZone
@@ -2881,7 +2881,7 @@ export interface EmailAddress {
 export interface AttendeeBase extends Recipient {
 
 	    /** The type of attendee. Possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type. */
-	    type?: AttendeeType
+	    type?: string
 
 }
 export interface MeetingTimeSuggestionsResult {
@@ -2902,7 +2902,7 @@ export interface MeetingTimeSuggestion {
 	    confidence?: number
 
 	    /** Availability of the meeting organizer for this meeting suggestion. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown. */
-	    organizerAvailability?: FreeBusyStatus
+	    organizerAvailability?: string
 
 	    /** An array that shows the availability status of each attendee for this meeting suggestion. */
 	    attendeeAvailability?: AttendeeAvailability[]
@@ -2929,7 +2929,7 @@ export interface AttendeeAvailability {
 	    attendee?: AttendeeBase
 
 	    /** The availability status of the attendee. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown. */
-	    availability?: FreeBusyStatus
+	    availability?: string
 
 }
 export interface Location {
@@ -2979,7 +2979,7 @@ export interface LocationConstraintItem extends Location {
 }
 export interface TimeConstraint {
 
-	    activityDomain?: ActivityDomain
+	activityDomain?: string
 
 	    timeslots?: TimeSlot[]
 
@@ -3014,7 +3014,7 @@ export interface Reminder {
 export interface ItemBody {
 
 	    /** The type of the content. Possible values are Text and HTML. */
-	    contentType?: BodyType
+	    contentType?: string
 
 	    /** The content of the item. */
 	    content?: string
@@ -3023,7 +3023,7 @@ export interface ItemBody {
 export interface ResponseStatus {
 
 	    /** The response type: None = 0, Organizer = 1, TentativelyAccepted = 2, Accepted = 3, Declined = 4, NotResponded = 5. Possible values are: None, Organizer, TentativelyAccepted, Accepted, Declined, NotResponded. */
-	    response?: ResponseType
+	    response?: string
 
 	    /** The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z' */
 	    time?: string
@@ -3038,7 +3038,7 @@ export interface PatternedRecurrence {
 }
 export interface RecurrencePattern {
 
-	    type?: RecurrencePatternType
+	    type?: string
 
 	    interval?: number
 
@@ -3046,16 +3046,16 @@ export interface RecurrencePattern {
 
 	    dayOfMonth?: number
 
-	    daysOfWeek?: DayOfWeek[]
+	    daysOfWeek?: string[]
 
-	    firstDayOfWeek?: DayOfWeek
+	    firstDayOfWeek?: string
 
-	    index?: WeekIndex
+	    index?: string
 
 }
 export interface RecurrenceRange {
 
-	    type?: RecurrenceRangeType
+	    type?: string
 
 	    startDate?: string
 
@@ -3084,7 +3084,7 @@ export interface ScoredEmailAddress {
 export interface Phone {
 
 	    /** The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio. */
-	    type?: PhoneType
+	    type?: string
 
 	    /** The phone number. */
 	    number?: string
@@ -3097,7 +3097,7 @@ export interface Phone {
 export interface Website {
 
 	    /** Possible values are: other, home, work, blog, profile. */
-	    type?: WebsiteType
+	    type?: string
 
 	    /** The URL of the website. */
 	    address?: string
@@ -3899,7 +3899,7 @@ export interface Diagnostic {
 export interface OnenotePatchContentCommand {
 
 	    /** The action to perform on the target element. Possible values are: replace, append, delete, insert, or prepend. */
-	    action?: OnenotePatchActionType
+	    action?: string
 
 	    /** The element to update. Must be the #<data-id> or the generated <id> of the element, or the body or title keyword. */
 	    target?: string
@@ -3908,7 +3908,7 @@ export interface OnenotePatchContentCommand {
 	    content?: string
 
 	    /** The location to add the supplied content, relative to the target element. Possible values are: after (default) or before. */
-	    position?: OnenotePatchInsertPosition
+	    position?: string
 
 }
 export interface OnenotePagePreview {
@@ -3934,7 +3934,7 @@ export interface RecentNotebook {
 	    links?: RecentNotebookLinks
 
 	    /** The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive. */
-	    sourceService?: OnenoteSourceService
+	    sourceService?: string
 
 }
 export interface RecentNotebookLinks {
